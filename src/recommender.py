@@ -1,6 +1,5 @@
-from optimizer import calculate_score
-from scheduler import scheduling_decision
-
+from src.optimizer import calculate_score
+from src.scheduler import scheduling_decision
 
 PLATFORMS = ["Instagram", "YouTube"]
 
