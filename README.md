@@ -1,21 +1,10 @@
 # Creator Content Posting Optimization System
 
 ## Team Information
-- **Team Name**: [Team Name]
-- **Year**: [Year]
-- **All-Female Team**: [Yes/No]
+- **Team Name**: DevDazzle
+- **Year**: 3rd Year
+- **All-Female Team**: Yes
 
 ## Architecture Overview
+The system gives recommendations about the most suitable platform, time of posting, and the decision whether to post or not based on platform activities and their trends, historical data of engagement on behalf of creator content, and content nature. All the possible platform and time slots combinations are considered and optimized through a scoring strategy that computes the engagement potential based on platform activity score, historical engagement patterns, and creator base engagement. Short content is preferred for posting on Instagram whereas long content suits YouTube but ultimately, the decision is taken according to engagement scores. Optimization of both variables at once results in better engagement potential than optimizing each separately. If the current time slot matches the recommended one, the system will make a decision whether to post the content now or schedule it for later.
 
-**Instructions**: Describe your approach in 200 words or less. Address the following:
-
-- How does your system determine the optimal posting time for content?
-- What strategy do you use to select between Instagram and YouTube platforms?
-- How do you balance platform activity patterns with creator-specific engagement history?
-- What approach do you take to decide between immediate posting versus scheduling?
-
----
-
-*Keep your description concise and focused on your core decision-making logic.*
-
-**Note:** Please do not change the format or spelling of anything in this README. The fields are extracted using a script, so any changes to the structure or formatting may break the extraction process.
