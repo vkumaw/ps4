@@ -16,11 +16,17 @@ def calculate_score(
         creator_base
     )
 
-    # Soft platform bias
-    if content_type == "SHORT" and platform == "Instagram":
-        score *= 1.10
+    # Soft platform preference
+    if (
+        content_type == "SHORT" and
+        platform == "Instagram"
+    ):
+        score *= 1.05
 
-    elif content_type == "LONG" and platform == "YouTube":
-        score *= 1.10
+    elif (
+        content_type == "LONG" and
+        platform == "YouTube"
+    ):
+        score *= 1.05
 
     return round(score, 6)

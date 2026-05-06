@@ -55,9 +55,7 @@ def generate_recommendation(
             )
 
             # Deterministic tie-breaking
-            if (
-                score > best_score
-            ):
+            if score > best_score:
 
                 best_score = score
 
@@ -89,7 +87,23 @@ def generate_recommendation(
                     best_result["activity_score"]
                 ):
 
-                    if platform == "Instagram":
+                    if (
+                        platform == "Instagram" and
+                        best_result["platform"] != "Instagram"
+                    ):
+
+                        best_result = {
+                            "platform": platform,
+                            "time_slot": hour,
+                            "score": score,
+                            "activity_score": activity_score
+                        }
+
+                    # Tie breaker 3
+                    elif (
+                        platform == best_result["platform"] and
+                        hour < best_result["time_slot"]
+                    ):
 
                         best_result = {
                             "platform": platform,
@@ -104,8 +118,9 @@ def generate_recommendation(
     )
 
     return {
-        "content_id": content_row["content_id"],
-        "platform": best_result["platform"],
-        "time_slot": best_result["time_slot"],
-        "decision": decision
-    }
+    "content_id": content_row["content_id"],
+    "platform": best_result["platform"],
+    "time_slot": best_result["time_slot"],
+    "decision": decision,
+    "confidence": round(best_score, 4)
+}
